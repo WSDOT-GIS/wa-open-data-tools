@@ -1,0 +1,1132 @@
+{
+    "objectIdFieldName": "ObjectId",
+    "uniqueIdField": {
+        "name": "ObjectId",
+        "isSystemMaintained": true
+    },
+    "globalIdFieldName": "globalid",
+    "geometryType": "esriGeometryPoint",
+    "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+    },
+    "fields": [
+        {
+            "name": "ObjectId",
+            "type": "esriFieldTypeOID",
+            "alias": "ObjectID",
+            "sqlType": "sqlTypeOther",
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "globalid",
+            "type": "esriFieldTypeGlobalID",
+            "alias": "GlobalID",
+            "sqlType": "sqlTypeOther",
+            "length": 38,
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "CreationDate",
+            "type": "esriFieldTypeDate",
+            "alias": "CreationDate",
+            "sqlType": "sqlTypeOther",
+            "length": 8,
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "Creator",
+            "type": "esriFieldTypeString",
+            "alias": "Creator",
+            "sqlType": "sqlTypeOther",
+            "length": 128,
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "EditDate",
+            "type": "esriFieldTypeDate",
+            "alias": "EditDate",
+            "sqlType": "sqlTypeOther",
+            "length": 8,
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "Editor",
+            "type": "esriFieldTypeString",
+            "alias": "Editor",
+            "sqlType": "sqlTypeOther",
+            "length": 128,
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "name_of_content_impacted",
+            "type": "esriFieldTypeString",
+            "alias": "Name of Content Impacted",
+            "sqlType": "sqlTypeOther",
+            "length": 255,
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "brief_summary",
+            "type": "esriFieldTypeString",
+            "alias": "Brief Summary",
+            "sqlType": "sqlTypeOther",
+            "length": 1000,
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "reason_for_change",
+            "type": "esriFieldTypeString",
+            "alias": "Reason for Change",
+            "sqlType": "sqlTypeOther",
+            "length": 255,
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "date_of_change",
+            "type": "esriFieldTypeDate",
+            "alias": "Date of Change",
+            "sqlType": "sqlTypeOther",
+            "length": 255,
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "level_of_impact",
+            "type": "esriFieldTypeString",
+            "alias": "Level of Impact",
+            "sqlType": "sqlTypeOther",
+            "length": 255,
+            "domain": {
+                "type": "codedValue",
+                "name": "cvd_level_of_impact",
+                "codedValues": [
+                    {
+                        "name": "Critical",
+                        "code": "critical"
+                    },
+                    {
+                        "name": "Informational",
+                        "code": "informational"
+                    }
+                ]
+            },
+            "defaultValue": null
+        },
+        {
+            "name": "impact_informational",
+            "type": "esriFieldTypeString",
+            "alias": "Impact - Informational",
+            "sqlType": "sqlTypeOther",
+            "length": 255,
+            "domain": {
+                "type": "codedValue",
+                "name": "cvd_impact_informational",
+                "codedValues": [
+                    {
+                        "name": "Adding fields",
+                        "code": "adding_fields"
+                    },
+                    {
+                        "name": "Adding Feature Classes",
+                        "code": "adding_feature_classes"
+                    },
+                    {
+                        "name": "Other- Describe",
+                        "code": "other"
+                    }
+                ]
+            },
+            "defaultValue": null
+        },
+        {
+            "name": "impact_informational_other",
+            "type": "esriFieldTypeString",
+            "alias": "Other- Describe - Impact - Informational",
+            "sqlType": "sqlTypeOther",
+            "length": 255,
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "impact_critical",
+            "type": "esriFieldTypeString",
+            "alias": "Impact - Critical",
+            "sqlType": "sqlTypeOther",
+            "length": 255,
+            "domain": {
+                "type": "codedValue",
+                "name": "cvd_impact_critical",
+                "codedValues": [
+                    {
+                        "name": "Deleting Fields",
+                        "code": "deleting_fields"
+                    },
+                    {
+                        "name": "Changing Field Names",
+                        "code": "changing_field_names"
+                    },
+                    {
+                        "name": "URL Changes ",
+                        "code": "url_changes_"
+                    },
+                    {
+                        "name": "Deleting or retiring the data",
+                        "code": "deleting_or_retiring_the_data"
+                    },
+                    {
+                        "name": "Other- Describe",
+                        "code": "other"
+                    }
+                ]
+            },
+            "defaultValue": null
+        },
+        {
+            "name": "impact_critical_other",
+            "type": "esriFieldTypeString",
+            "alias": "Other- Describe - Impact - Critical",
+            "sqlType": "sqlTypeOther",
+            "length": 255,
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "additional_information",
+            "type": "esriFieldTypeString",
+            "alias": "Additional Information",
+            "sqlType": "sqlTypeOther",
+            "length": 1000,
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "informational_url",
+            "type": "esriFieldTypeString",
+            "alias": "Informational URL",
+            "sqlType": "sqlTypeOther",
+            "length": 255,
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "additional_informational_url",
+            "type": "esriFieldTypeString",
+            "alias": "Additional Informational URL",
+            "sqlType": "sqlTypeOther",
+            "length": 255,
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "questions_contact",
+            "type": "esriFieldTypeString",
+            "alias": "Contact Email",
+            "sqlType": "sqlTypeOther",
+            "length": 255,
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "type_of_notification",
+            "type": "esriFieldTypeString",
+            "alias": "Type of Notification",
+            "sqlType": "sqlTypeOther",
+            "length": 255,
+            "domain": {
+                "type": "codedValue",
+                "name": "cvd_type_of_notification",
+                "codedValues": [
+                    {
+                        "name": "Open Data",
+                        "code": "open_data"
+                    },
+                    {
+                        "name": "Agencies",
+                        "code": "agencies"
+                    },
+                    {
+                        "name": "Both",
+                        "code": "_both"
+                    }
+                ]
+            },
+            "defaultValue": null
+        }
+    ],
+    "features": [
+        {
+            "attributes": {
+                "ObjectId": 12,
+                "globalid": "bae0f81c-680a-4e3d-85c4-fd9c2fba673a",
+                "CreationDate": 1557949474080,
+                "Creator": "Maria_Contractor",
+                "EditDate": 1557952089201,
+                "Editor": "Maria_Contractor",
+                "name_of_content_impacted": "WSDOT State Highway data update April 30",
+                "brief_summary": "WSDOT is updating State Highway related data April 30, 2019.\nThere is no change to schema but content will be updated.\n",
+                "reason_for_change": "annual content update",
+                "date_of_change": 1556582400000,
+                "level_of_impact": "informational",
+                "impact_informational": "other",
+                "impact_informational_other": "content update",
+                "impact_critical": " ",
+                "impact_critical_other": " ",
+                "additional_information": "The update impacts the following items\nWSDOT - State Route Lines (1:24K)\nWSDOT - State Route Increasing (1:24K)\nWSDOT - State Route Decreasing (1:24K)\nWSDOT - State Route Ramp (1:24K)\nWSDOT - State Route Turnbacks (1:24K)\nWSDOT - State Route Proposed and",
+                "informational_url": " ",
+                "additional_informational_url": " ",
+                "questions_contact": "mitchejo@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 21,
+                "globalid": "d189aa0f-67da-4059-8755-9dcbbc7e0454",
+                "CreationDate": 1564420390772,
+                "Creator": "",
+                "EditDate": 1564420390772,
+                "Editor": "",
+                "name_of_content_impacted": "WSDOT - Maintenance Data Landscaped Areas",
+                "brief_summary": "dataset to be retired",
+                "reason_for_change": "data is being retired",
+                "date_of_change": 1565679600000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "deleting_or_retiring_the_data",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "geo.wa.gov/datasets/WSDOT::wsdot-maintenance-data-landscaped-areas",
+                "additional_informational_url": null,
+                "questions_contact": "mitchejo@wsdot.wa.gov",
+                "type_of_notification": "open_data"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 22,
+                "globalid": "02eebd74-4544-48c1-8533-5f866dcbe670",
+                "CreationDate": 1564420473104,
+                "Creator": "",
+                "EditDate": 1564420473104,
+                "Editor": "",
+                "name_of_content_impacted": "WSDOT - Maintenance Data Noxious Weeds",
+                "brief_summary": "data is being removed",
+                "reason_for_change": "data is being retired",
+                "date_of_change": 1565679600000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "deleting_or_retiring_the_data",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "geo.wa.gov/datasets/WSDOT::wsdot-maintenance-data-noxious-weeds",
+                "additional_informational_url": null,
+                "questions_contact": "mitchejo@wsdot.wa.gov",
+                "type_of_notification": "open_data"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 23,
+                "globalid": "c2d63b45-23ca-41ea-8784-3e03f1f09838",
+                "CreationDate": 1564420555511,
+                "Creator": "",
+                "EditDate": 1564420555511,
+                "Editor": "",
+                "name_of_content_impacted": "WSDOT - Maintenance Data Special Maintenance Areas",
+                "brief_summary": "WSDOT - Maintenance Data Special Maintenance Areas dataset to be removed",
+                "reason_for_change": "data is being retired",
+                "date_of_change": 1565679600000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "deleting_or_retiring_the_data",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "geo.wa.gov/datasets/WSDOT::wsdot-maintenance-data-special-maintenance-areas",
+                "additional_informational_url": null,
+                "questions_contact": "mitchejo@wsdot.wa.gov",
+                "type_of_notification": "open_data"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 24,
+                "globalid": "820a0a9b-17f4-4329-86e1-f2cf4523ea30",
+                "CreationDate": 1564420636436,
+                "Creator": "",
+                "EditDate": 1564420636436,
+                "Editor": "",
+                "name_of_content_impacted": "WSDOT - Maintenance Data Zone 1",
+                "brief_summary": "WSDOT - Maintenance Data Zone 1 dataset is being removed",
+                "reason_for_change": "data is being retired",
+                "date_of_change": 1565679600000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "deleting_or_retiring_the_data",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "http://geo.wa.gov/datasets/WSDOT::wsdot-maintenance-data-zone-1",
+                "additional_informational_url": null,
+                "questions_contact": "mitchejo@wsdot.wa.gov",
+                "type_of_notification": "open_data"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 25,
+                "globalid": "fdad2663-2b66-42fa-823e-3397b8f44f27",
+                "CreationDate": 1564423601567,
+                "Creator": "",
+                "EditDate": 1564423601567,
+                "Editor": "",
+                "name_of_content_impacted": "WSDOT - Commute Trip Reduction Tracts ",
+                "brief_summary": "Adding field \"SurveyCycle\" to accommodate multiple bienniums of data",
+                "reason_for_change": "To accommodate multiple bienniums of data",
+                "date_of_change": 1565679600000,
+                "level_of_impact": "informational",
+                "impact_informational": "adding_fields",
+                "impact_informational_other": null,
+                "impact_critical": null,
+                "impact_critical_other": null,
+                "additional_information": "One field to be added \"SurveyCycle\" to accommodate multiple bienniums of data\n",
+                "informational_url": "http://geo.wa.gov/datasets/WSDOT::wsdot-commute-trip-reduction-tracts",
+                "additional_informational_url": null,
+                "questions_contact": "mitchejo@wsdot.wa.gov",
+                "type_of_notification": "open_data"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 26,
+                "globalid": "1c0418a3-74ec-4016-86e1-6dc44c3762fc",
+                "CreationDate": 1565197316111,
+                "Creator": "OnlineMapSupport_WSDOT",
+                "EditDate": 1565198609708,
+                "Editor": "OnlineMapSupport_WSDOT",
+                "name_of_content_impacted": "WSDOT Bicycle and Pedestrian Count Portal application",
+                "brief_summary": "This application is deprecated and will no longer be available after August 27, 2019. A new version of the application is now available at the associated URL.",
+                "reason_for_change": "A new version of the application is now available at the associated URL.",
+                "date_of_change": 1566889200000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "url_changes_",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": null,
+                "additional_informational_url": "wsdot.wa.gov/data/tools/bikepedcounts/",
+                "questions_contact": "onlinemapsupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 41,
+                "globalid": "0b9bca1e-b30c-4a62-8b98-9e463ba6a626",
+                "CreationDate": 1571346019416,
+                "Creator": "OnlineMapSupport_WSDOT",
+                "EditDate": 1571346335486,
+                "Editor": "OnlineMapSupport_WSDOT",
+                "name_of_content_impacted": "WSDOT - Roadway Data Acceleration Lanes",
+                "brief_summary": "This data has been updated and will no longer be available after November 6, 2019. This data can now be accessed at the following URL. ",
+                "reason_for_change": "This data has been updated.",
+                "date_of_change": 1573113600000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "url_changes_",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "https://data.wsdot.wa.gov/arcgis/rest/services/Shared/RoadwayCharacteristicData/MapServer/0",
+                "additional_informational_url": "https://wsdot.maps.arcgis.com/home/item.html?id=1b3b6e3b67384c94bbdc74e96ccb6d3c",
+                "questions_contact": "onlinemapsupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 42,
+                "globalid": "a8989933-a821-4c72-8217-7825016b3576",
+                "CreationDate": 1571346565063,
+                "Creator": "OnlineMapSupport_WSDOT",
+                "EditDate": 1571346565063,
+                "Editor": "OnlineMapSupport_WSDOT",
+                "name_of_content_impacted": "WSDOT - Roadway Data Access Control",
+                "brief_summary": "This data has been updated and will no longer be available after November 6, 2019. This data can now be accessed at the following URL. ",
+                "reason_for_change": "This data has been updated.",
+                "date_of_change": 1573113600000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "url_changes_",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "data.wsdot.wa.gov/arcgis/rest/services/Shared/RoadwayCharacteristicData/MapServer/1",
+                "additional_informational_url": "wsdot.maps.arcgis.com/home/item.html?id=35cd6f1a5e2f4553a8e83c9ff6edbfa7",
+                "questions_contact": "onlinemapsupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 43,
+                "globalid": "7ac34ac4-f7fa-4e55-8c16-2962188297a6",
+                "CreationDate": 1571346716955,
+                "Creator": "OnlineMapSupport_WSDOT",
+                "EditDate": 1571346716955,
+                "Editor": "OnlineMapSupport_WSDOT",
+                "name_of_content_impacted": "WSDOT - Roadway Data at Grade Railroad Crossings",
+                "brief_summary": "This data has been updated and will no longer be available after November 6, 2019. This data can now be accessed at the following URL. ",
+                "reason_for_change": "This data has been updated.",
+                "date_of_change": 1573113600000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "url_changes_",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "data.wsdot.wa.gov/arcgis/rest/services/Shared/RoadwayCharacteristicData/MapServer/6",
+                "additional_informational_url": "wsdot.maps.arcgis.com/home/item.html?id=5eb7ce10266f44d1947fd3061f20a978",
+                "questions_contact": "onlinemapsupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 44,
+                "globalid": "beca5347-6202-4014-8b0c-ddcf837ad1b4",
+                "CreationDate": 1571346830298,
+                "Creator": "OnlineMapSupport_WSDOT",
+                "EditDate": 1571346830298,
+                "Editor": "OnlineMapSupport_WSDOT",
+                "name_of_content_impacted": "WSDOT - Roadway Data Divided Highway",
+                "brief_summary": "This data has been updated and will no longer be available after November 6, 2019. This data can now be accessed at the following URL. ",
+                "reason_for_change": "This data has been updated.",
+                "date_of_change": 1573113600000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "url_changes_",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "data.wsdot.wa.gov/arcgis/rest/services/Shared/RoadwayCharacteristicData/MapServer/2",
+                "additional_informational_url": "wsdot.maps.arcgis.com/home/item.html?id=fb18129d09e9448c8c1c8da2d4b093e4",
+                "questions_contact": "onlinemapsupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 45,
+                "globalid": "7faf4432-27d8-480f-8747-001e6a910234",
+                "CreationDate": 1571346968145,
+                "Creator": "OnlineMapSupport_WSDOT",
+                "EditDate": 1571346968145,
+                "Editor": "OnlineMapSupport_WSDOT",
+                "name_of_content_impacted": "WSDOT - Roadway Data Lane Information",
+                "brief_summary": "This data has been updated and will no longer be available after November 6, 2019. This data can now be accessed at the following URL. ",
+                "reason_for_change": "This data has been updated.",
+                "date_of_change": 1573113600000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "url_changes_",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "data.wsdot.wa.gov/arcgis/rest/services/Shared/RoadwayCharacteristicData/MapServer/3",
+                "additional_informational_url": "wsdot.maps.arcgis.com/home/item.html?id=b6acab8c99da4f75aaef9cf8fe4edb3e",
+                "questions_contact": "onlinemapsupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 46,
+                "globalid": "3eafdc2c-b4db-4b34-8d70-95aefb7d5825",
+                "CreationDate": 1571348340483,
+                "Creator": "OnlineMapSupport_WSDOT",
+                "EditDate": 1571348340483,
+                "Editor": "OnlineMapSupport_WSDOT",
+                "name_of_content_impacted": "WSDOT - Roadway Data Medians",
+                "brief_summary": "This data has been updated and will no longer be available after November 6, 2019. This data can now be accessed at the following URL. ",
+                "reason_for_change": "This data has been updated.",
+                "date_of_change": 1573113600000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "url_changes_",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "data.wsdot.wa.gov/arcgis/rest/services/Shared/RoadwayCharacteristicData/MapServer/5",
+                "additional_informational_url": "wsdot.maps.arcgis.com/home/item.html?id=40be15f7cbe948e8a845bcaef4f70672",
+                "questions_contact": "onlinemapsupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 47,
+                "globalid": "339528f5-86c9-4778-8390-dd2d66e4f787",
+                "CreationDate": 1571348437332,
+                "Creator": "OnlineMapSupport_WSDOT",
+                "EditDate": 1571348437332,
+                "Editor": "OnlineMapSupport_WSDOT",
+                "name_of_content_impacted": "WSDOT - Roadway Data Shoulders",
+                "brief_summary": "This data has been updated and will no longer be available after November 6, 2019. This data can now be accessed at the following URL. ",
+                "reason_for_change": "This data has been updated. ",
+                "date_of_change": 1573113600000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "url_changes_",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "data.wsdot.wa.gov/arcgis/rest/services/Shared/RoadwayCharacteristicData/MapServer/9",
+                "additional_informational_url": "wsdot.maps.arcgis.com/home/item.html?id=6340fa8fcfb34254837b8938097a5248",
+                "questions_contact": "onlinemapsupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 48,
+                "globalid": "a46fec73-5cf7-42b0-896b-7ec34279c77e",
+                "CreationDate": 1571348591150,
+                "Creator": "OnlineMapSupport_WSDOT",
+                "EditDate": 1571348591150,
+                "Editor": "OnlineMapSupport_WSDOT",
+                "name_of_content_impacted": "WSDOT - Roadway Data Special Use Lanes",
+                "brief_summary": "This data has been updated and will no longer be available after November 6, 2019. This data can now be accessed at the following URL. ",
+                "reason_for_change": "This data has been updated.",
+                "date_of_change": 1573113600000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "url_changes_",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "data.wsdot.wa.gov/arcgis/rest/services/Shared/RoadwayCharacteristicData/MapServer/10",
+                "additional_informational_url": "wsdot.maps.arcgis.com/home/item.html?id=900c2296cb3545fe956bbc2bced85f4e",
+                "questions_contact": "onlinemapsupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 49,
+                "globalid": "ddeb6252-9951-40e5-8207-b2edd6d236fb",
+                "CreationDate": 1571350264501,
+                "Creator": "OnlineMapSupport_WSDOT",
+                "EditDate": 1571350264501,
+                "Editor": "OnlineMapSupport_WSDOT",
+                "name_of_content_impacted": "WSDOT - Roadway Data Speed Limits",
+                "brief_summary": "This data has been updated and will no longer be available after November 6, 2019. This data can now be accessed at the following URL. ",
+                "reason_for_change": "This data has been updated.",
+                "date_of_change": 1573113600000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "url_changes_",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "data.wsdot.wa.gov/arcgis/rest/services/Shared/RoadwayCharacteristicData/MapServer/4",
+                "additional_informational_url": "wsdot.maps.arcgis.com/home/item.html?id=7bd8c700fa8b47d08a57c49b77b34ad5",
+                "questions_contact": "onlinemapsupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 50,
+                "globalid": "f182b863-c56f-42d9-8373-0b8fc5861de7",
+                "CreationDate": 1571350370229,
+                "Creator": "OnlineMapSupport_WSDOT",
+                "EditDate": 1571350370229,
+                "Editor": "OnlineMapSupport_WSDOT",
+                "name_of_content_impacted": "WSDOT - Roadway Data Turn Lanes",
+                "brief_summary": "This data has been updated and will no longer be available after November 6, 2019. This data can now be accessed at the following URL. ",
+                "reason_for_change": "This data has been updated. ",
+                "date_of_change": 1573113600000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "url_changes_",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "data.wsdot.wa.gov/arcgis/rest/services/Shared/RoadwayCharacteristicData/MapServer/12",
+                "additional_informational_url": "wsdot.maps.arcgis.com/home/item.html?id=2b5438c4b3544a46a5c25def8d3f15bc",
+                "questions_contact": "onlinemapsupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 51,
+                "globalid": "756bf01d-ff0d-4142-827f-32f01454fa32",
+                "CreationDate": 1571351056273,
+                "Creator": "OnlineMapSupport_WSDOT",
+                "EditDate": 1571351056273,
+                "Editor": "OnlineMapSupport_WSDOT",
+                "name_of_content_impacted": "WSDOT - Roadway Data Urban Rural",
+                "brief_summary": "This data has been updated and will no longer be available after November 6, 2019. This data can now be accessed at the following URL. ",
+                "reason_for_change": null,
+                "date_of_change": 1573113600000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "url_changes_",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "data.wsdot.wa.gov/arcgis/rest/services/Shared/RoadwayCharacteristicData/MapServer/8",
+                "additional_informational_url": "wsdot.maps.arcgis.com/home/item.html?id=8b5377c68c34448c8441d2d33d6dc292",
+                "questions_contact": "onlinemapsupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 52,
+                "globalid": "f5530d10-19d7-41aa-8d9a-8522145f98e0",
+                "CreationDate": 1571351482306,
+                "Creator": "OnlineMapSupport_WSDOT",
+                "EditDate": 1571351482306,
+                "Editor": "OnlineMapSupport_WSDOT",
+                "name_of_content_impacted": "WSDOT - Roadway Data",
+                "brief_summary": "Multiple WSDOT - Roadway datasets are deprecated and will no longer be available after November 6, 2019. The impacted datasets are: Bridge, Coincident Routes, Horizontal Alignment, Horizontal Curve Design Speed (GT 20 mph), Horizontal Curve Design Speed (LT 20 mph), Intersections, Maintenance Areas and Sections, Terrain Type, Tunnels, Undercrossings, Vertical Alignment, Vertical Design Speed, and Weigh Stations and Rest Areas.",
+                "reason_for_change": null,
+                "date_of_change": 1573113600000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "deleting_or_retiring_the_data",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": null,
+                "additional_informational_url": null,
+                "questions_contact": "onlinemapsupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 55,
+                "globalid": "6afc5c3d-f50c-46ac-8813-14efbe5c3746",
+                "CreationDate": 1573158615484,
+                "Creator": "MitcheJo_WSDOT",
+                "EditDate": 1573158615484,
+                "Editor": "MitcheJo_WSDOT",
+                "name_of_content_impacted": "WSDOT Noise Walls",
+                "brief_summary": "changing two field names, may impact existing layers or connections",
+                "reason_for_change": null,
+                "date_of_change": 1573200000000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "changing_field_names",
+                "impact_critical_other": null,
+                "additional_information": "BEG_ARM is changing to BeginAccumulatedRouteMile\nEND_ARM is changing to EndAccumulatedRouteMile",
+                "informational_url": "geo.wa.gov/datasets/WSDOT::wsdot-noise-walls",
+                "additional_informational_url": null,
+                "questions_contact": "altonj@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 62,
+                "globalid": "93de557c-d57e-4776-895e-759f9a76d18c",
+                "CreationDate": 1589297569546,
+                "Creator": "OnlineMapSupport_WSDOT",
+                "EditDate": 1589297569546,
+                "Editor": "OnlineMapSupport_WSDOT",
+                "name_of_content_impacted": "WSDOT - Freight and Goods Data",
+                "brief_summary": "This data has been replaced and will not be available after May 28th. The new data can now be accessed at the URL below.\n",
+                "reason_for_change": "The data has been replaced.",
+                "date_of_change": 1590649200000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "url_changes_",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "wsdot.maps.arcgis.com/home/item.html?id=d4be40f45af247c29a4ee8841000b539",
+                "additional_informational_url": "wsdot.maps.arcgis.com/home/item.html?id=d4be40f45af247c29a4ee8841000b539",
+                "questions_contact": "onlinemapsupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 63,
+                "globalid": "d533480a-e8c9-4ee4-8307-bb7d1c7ce6ef",
+                "CreationDate": 1589298890757,
+                "Creator": "OnlineMapSupport_WSDOT",
+                "EditDate": 1589298890757,
+                "Editor": "OnlineMapSupport_WSDOT",
+                "name_of_content_impacted": "Washington State Bridge Resiliency Assessment Data",
+                "brief_summary": "This data has been replaced and will not be available after May 28th. The new data can now be accessed at the URL below.",
+                "reason_for_change": "The data has been replaced",
+                "date_of_change": 1590649200000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "url_changes_",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "wsdot.maps.arcgis.com/home/item.html?id=bc7da4b99a87467285644279ad165936",
+                "additional_informational_url": "wsdot.maps.arcgis.com/home/item.html?id=bc7da4b99a87467285644279ad165936",
+                "questions_contact": "onlinemapsupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 70,
+                "globalid": "5a91aeb4-1cf8-455b-853d-1ce6c9e86dc0",
+                "CreationDate": 1598890696819,
+                "Creator": "OnlineMapSupport_WSDOT",
+                "EditDate": 1598890696819,
+                "Editor": "OnlineMapSupport_WSDOT",
+                "name_of_content_impacted": "HPMS Public Road Review",
+                "brief_summary": "The HPMS Public Road Review map service is being retired. ",
+                "reason_for_change": "The application used by this map service has been retired. ",
+                "date_of_change": 1600110000000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": null,
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "data.wsdot.wa.gov/arcgis/rest/services/HPMS/PublicRoadReview/MapServer",
+                "additional_informational_url": null,
+                "questions_contact": "julie.jackson@wsdot.wa.gov",
+                "type_of_notification": "open_data"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 77,
+                "globalid": "8b6e23b4-e0ad-4942-8910-0c251f5e910d",
+                "CreationDate": 1601597605534,
+                "Creator": "OnlineMapSupport_WSDOT",
+                "EditDate": 1601597605534,
+                "Editor": "OnlineMapSupport_WSDOT",
+                "name_of_content_impacted": "WSDOT - Washington All Public Roads (WAPR)",
+                "brief_summary": "The WAPR dataset has become outdated, and is no used by WSDOT for reporting by the Highway Performance Management System. To avoid confusion/errors, we are retiring this dataset. ",
+                "reason_for_change": "This dataset will no longer be available. The data is out of date and no longer maintained.",
+                "date_of_change": 1602788400000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "deleting_or_retiring_the_data",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "data.wsdot.wa.gov/arcgis/rest/services/Shared/LRSData/MapServer/9",
+                "additional_informational_url": null,
+                "questions_contact": "julie.jackson@wsdot.wa.gov",
+                "type_of_notification": "open_data"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 85,
+                "globalid": "2384bbb4-aabc-4d97-80b2-fd24c92ae6c6",
+                "CreationDate": 1614098585579,
+                "Creator": "OnlineMapSupport_WSDOT",
+                "EditDate": 1614098585579,
+                "Editor": "OnlineMapSupport_WSDOT",
+                "name_of_content_impacted": "WSDOT - Bicycle and Pedestrian Manual Counts - All Records",
+                "brief_summary": "WSDOT - Bicycle and Pedestrian Manual Counts - All Records has been replaced and will no longer be available after March 12, 2021. ",
+                "reason_for_change": "Content has been replaced. Please refer to additional information for content replacement URL.",
+                "date_of_change": 1615579200000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "other",
+                "impact_critical_other": "Replacement",
+                "additional_information": null,
+                "informational_url": "wsdot.maps.arcgis.com/home/item.html?id=5f2f1a66b8fc4b6cb51b40ac28be5d8f",
+                "additional_informational_url": "wsdot.maps.arcgis.com/home/item.html?id=5f2f1a66b8fc4b6cb51b40ac28be5d8f",
+                "questions_contact": "onlinemapsupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 88,
+                "globalid": "d20a59b3-4188-4898-89aa-0a54c1f77d70",
+                "CreationDate": 1621444948608,
+                "Creator": "",
+                "EditDate": 1621444948608,
+                "Editor": "",
+                "name_of_content_impacted": "WSDOT - Traffic Counts",
+                "brief_summary": "This layer has been deprecated and will be retired on June 3, 2021. ",
+                "reason_for_change": "Replaced",
+                "date_of_change": 1622746800000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "url_changes_",
+                "impact_critical_other": null,
+                "additional_information": "This layer has been deprecated and will be retired on June 3, 2021. A new Traffic Counts layer is now available and should be used in place of this layer (see URL).",
+                "informational_url": "https://data.wsdot.wa.gov/arcgis/rest/services/Shared/TrafficData/MapServer/0",
+                "additional_informational_url": "https://data.wsdot.wa.gov/arcgis/rest/services/Shared/TrafficData/MapServer/0",
+                "questions_contact": "OnlineMapSupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 89,
+                "globalid": "cb5b72e7-bfa4-4330-8fef-42b64d3891ba",
+                "CreationDate": 1621445208838,
+                "Creator": "",
+                "EditDate": 1621445208838,
+                "Editor": "",
+                "name_of_content_impacted": "WSDOT - Traffic Sections ",
+                "brief_summary": "This layer has been deprecated and will be retired on June 3, 2021. A new Traffic Sections layer is now available and should be used in place of this layer (see URL).",
+                "reason_for_change": "Replaced",
+                "date_of_change": 1622746800000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "url_changes_",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "https://data.wsdot.wa.gov/arcgis/rest/services/Shared/TrafficData/MapServer/1",
+                "additional_informational_url": null,
+                "questions_contact": "OnlineMapSupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 93,
+                "globalid": "5079c5cf-b78f-46dd-828d-21eaacc29813",
+                "CreationDate": 1631314394609,
+                "Creator": "",
+                "EditDate": 1631314394609,
+                "Editor": "",
+                "name_of_content_impacted": "WSDOT - State Route Milepost Markers",
+                "brief_summary": "This data has been replaced by WSDOT - Milepost Values One Mile and WSDOT - Milepost Values One Tenth Mile (see item URLs below). This data will be retired on September 24, 2021.",
+                "reason_for_change": "The data has been replaced.",
+                "date_of_change": 1632510000000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "deleting_or_retiring_the_data",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": "wsdot.maps.arcgis.com/home/item.html?id=727f149e4048452dac1b60944d41fef0",
+                "additional_informational_url": "wsdot.maps.arcgis.com/home/item.html?id=522d4641888e47c4a3ad0fa8b3fef68f",
+                "questions_contact": "onlinemapsupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 94,
+                "globalid": "88efafb6-ec75-4841-86c7-56a420ac53f4",
+                "CreationDate": 1634680923172,
+                "Creator": "",
+                "EditDate": 1634680923172,
+                "Editor": "",
+                "name_of_content_impacted": "WSDOT - Tribal Reservation and Trust Lands",
+                "brief_summary": "This data has been deprecated and will no longer be available after November 3, 2021.",
+                "reason_for_change": "WSDOT is not the authoritative source for the data. ",
+                "date_of_change": 1635966000000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "deleting_or_retiring_the_data",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": null,
+                "additional_informational_url": null,
+                "questions_contact": "OnlineMapSupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 95,
+                "globalid": "77cba444-815a-4154-8be6-e35a17e0659a",
+                "CreationDate": 1634683039595,
+                "Creator": "",
+                "EditDate": 1634683039595,
+                "Editor": "",
+                "name_of_content_impacted": "WSDOT - Guardrail Lines",
+                "brief_summary": "Guardrail lines has been deprecated and will no longer be available after November 3, 2021.",
+                "reason_for_change": null,
+                "date_of_change": 1635966000000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "deleting_or_retiring_the_data",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": null,
+                "additional_informational_url": null,
+                "questions_contact": "OnlineMapSupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 96,
+                "globalid": "d79f4c57-500e-4b43-8333-b48980701426",
+                "CreationDate": 1634683104001,
+                "Creator": "",
+                "EditDate": 1634683104001,
+                "Editor": "",
+                "name_of_content_impacted": "WSDOT - Guardrail Points",
+                "brief_summary": "Guardrail points has been deprecated and will no longer be available after November 3, 2021.",
+                "reason_for_change": null,
+                "date_of_change": 1635966000000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "deleting_or_retiring_the_data",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": null,
+                "additional_informational_url": null,
+                "questions_contact": "OnlineMapSupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 97,
+                "globalid": "0c7db64d-4e6e-407d-8114-c28675825675",
+                "CreationDate": 1634749184801,
+                "Creator": "",
+                "EditDate": 1634749184801,
+                "Editor": "",
+                "name_of_content_impacted": "WSDOT GIS Data Download website",
+                "brief_summary": "On or about November 7, 2021 WSDOT GIS Data Download website will redirect website traffic to the WSDOT Geospatial Open Data site. ",
+                "reason_for_change": "WSDOT's Internet site is being redesigned. The new site will be far more streamlined, mobile friendly, and accessible. The move to an Open Data platform allows WSDOT to continue to share our geospatial data to the public.",
+                "date_of_change": 1636311600000,
+                "level_of_impact": "informational",
+                "impact_informational": "other",
+                "impact_informational_other": null,
+                "impact_critical": null,
+                "impact_critical_other": null,
+                "additional_information": "Both the \"old\" and \"new\" WSDOT GIS Data download sites are provided in the Informational URL sections. Please note that the \"go live\" date for the new website is tentative. Be assured, the current download site won't disappear BEFORE November 7th, but it will change sometime after November 7th. This website update affects all WSDOT webpages, not just the GIS Data Download page. ",
+                "informational_url": "www.wsdot.wa.gov/mapsdata/geodatacatalog/",
+                "additional_informational_url": "gisdata-wsdot.opendata.arcgis.com/",
+                "questions_contact": "OnlineMapSupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 100,
+                "globalid": "1eadef47-8a14-473e-855e-4a830890b0af",
+                "CreationDate": 1642196440918,
+                "Creator": "",
+                "EditDate": 1642196440918,
+                "Editor": "",
+                "name_of_content_impacted": "WSDOT Fish Passage Barriers",
+                "brief_summary": "The WSDOT Fish Passage Barriers app has been replaced by the WSDOT Fish Passage Inventory app and will be retired on January 31st, 2022. Please see the new app at the URL below.",
+                "reason_for_change": "The WSDOT Fish Passage Barriers app will be retired on January 31st, 2022.",
+                "date_of_change": 1643659200000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "other",
+                "impact_critical_other": "Deleting app.",
+                "additional_information": null,
+                "informational_url": null,
+                "additional_informational_url": "wsdot.maps.arcgis.com/apps/webappviewer/index.html?id=c2850f301118480fbb576f1ccfda7f47",
+                "questions_contact": "OnlineMapSupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 101,
+                "globalid": "b3605f4e-6ac5-4159-847a-05db3645e0d1",
+                "CreationDate": 1644523819314,
+                "Creator": "",
+                "EditDate": 1644523819314,
+                "Editor": "",
+                "name_of_content_impacted": "All WSDOT ALPACA census content ",
+                "brief_summary": "All WSDOT ALPACA census content has been deprecated and will be retired on March 15th.",
+                "reason_for_change": "Retired",
+                "date_of_change": 1647374400000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "deleting_or_retiring_the_data",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": null,
+                "additional_informational_url": null,
+                "questions_contact": "OnlineMapSupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 106,
+                "globalid": "02c2f7f4-4f2f-493b-8309-debda36fcbfe",
+                "CreationDate": 1651709236651,
+                "Creator": "",
+                "EditDate": 1651709236651,
+                "Editor": "",
+                "name_of_content_impacted": "WSDOT Historic State Route Data",
+                "brief_summary": "WSDOT 24K and 500K historic state route layers are deprecated and have been replaced. The old layers will be retired on May 20, 2022. Please use the layers in the new map services:\n\nWSDOT - Historic State Route Data (1:24K) \u003cyear\u003e\nWSDOT - Historic State Route Data (1:500K) \u003cyear\u003e",
+                "reason_for_change": "WSDOT 24K and 500K historic state route layers are deprecated and have been replaced. ",
+                "date_of_change": 1653073200000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "url_changes_",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": null,
+                "additional_informational_url": null,
+                "questions_contact": "OnlineMapSupport@WSDOT.wa.gov",
+                "type_of_notification": "_both"
+            }
+        },
+        {
+            "attributes": {
+                "ObjectId": 107,
+                "globalid": "9e0c22ae-6290-4112-8a7a-b68932fbb3ad",
+                "CreationDate": 1652391027586,
+                "Creator": "",
+                "EditDate": 1652391027586,
+                "Editor": "",
+                "name_of_content_impacted": "WSDOT Traffic Volume Trend",
+                "brief_summary": "This content will be removed on May 26, 2022.",
+                "reason_for_change": "Data to be retired",
+                "date_of_change": 1653591600000,
+                "level_of_impact": "critical",
+                "impact_informational": null,
+                "impact_informational_other": null,
+                "impact_critical": "deleting_or_retiring_the_data",
+                "impact_critical_other": null,
+                "additional_information": null,
+                "informational_url": null,
+                "additional_informational_url": null,
+                "questions_contact": "OnlineMapSupport@wsdot.wa.gov",
+                "type_of_notification": "_both"
+            }
+        }
+    ]
+}
