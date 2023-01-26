@@ -1,0 +1,13 @@
+version: "0.2"
+ignorePaths: []
+allowCompoundWords: true
+dictionaryDefinitions:
+  - name: custom-dictionary
+    path: ./.cspell/custom-dictionary.txt
+    addWords: true
+dictionaries:
+  - custom-dictionary
+words: []
+ignoreWords:
+  - globalid
+import: []
