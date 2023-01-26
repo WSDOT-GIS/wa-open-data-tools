@@ -1,4 +1,13 @@
-New-Variable -Name ArcgisOutputFormats -Value @('html', 'json', 'geojson', 'pjson', 'pgeojson', 'pbf') -Option Constant, AllScope
+New-Variable -Name ArcGisOutputFormats -Value @(
+    'html', 
+    'json', 
+    'geojson', 
+    'pbf'
+    <#
+    # Don't need pretty-printed since humans won't be reading it. 
+    'pjson', 'pgeojson', 
+    #> 
+) -Option Constant, AllScope
 <#
     cvd_level_of_impact
 
@@ -39,7 +48,7 @@ class NotificationAttributes
     # ObjectID
     [int]$ObjectId
     # GlobalID
-    [string]$globalid
+    [guid]$globalid
     # CreationDate
     [datetime]$CreationDate
     # Creator
@@ -148,6 +157,10 @@ function Convert-Property
     {
         $PropertyValue = $null
     }
+    elseif ($PropertyName -ieq 'globalid')
+    {
+        $PropertyValue = [guid]$PropertyValue
+    }
     elseif ($PropertyName -imatch 'Date')
     {
         $PropertyValue = ConvertFrom-ArcGisJsonDate($PropertyValue)  #::new($PropertyValue)
@@ -161,8 +174,38 @@ function Convert-Property
         }
         $PropertyValue = [uri]$PropertyValue
     }
+    elseif ($PropertyValue -is [System.Object]) {
+        $PropertyValue = $PropertyValue | Convert-Properties
+    }
 
     return $PropertyName, $PropertyValue
+}
+
+function Convert-Properties
+{
+    [CmdletBinding()]
+    param (
+        [Parameter(
+            Mandatory,
+            Position = 0,
+            ValueFromPipeline,
+            ValueFromPipelineByPropertyName
+        )]
+        $InputObject
+    )
+
+    # Create a temporary hashtable to store the converted properties.
+    $temp = @{}
+    foreach ($property in $attributes.PSObject.Properties | Select-Object Name, Value)
+    {
+        $pName = $property.Name
+        $pValue = $property.Value
+    
+        $pName, $pValue = Convert-Property $pName $pValue
+        $temp.Add($pName, $pValue)
+    }
+    
+    return [pscustomobject]$temp
 }
 
 <#
@@ -197,6 +240,44 @@ function ConvertTo-NotificationAttributes
     return [NotificationAttributes]$temp
 }
 
+function Invoke-RequestForFeatureLayerInfo
+{
+    [CmdletBinding()]
+    param (
+        [Parameter(
+            Position = 0,
+            ValueFromPipeline,
+            ValueFromPipelineByPropertyName
+        )]
+        [ValidateNotNullOrEmpty()]
+        [uri]
+        $Uri = 'https://services.arcgis.com/jsIt88o09Q0r1j8h/ArcGIS/rest/services/survey123_75f94f8a0675460796843c95665a814b/FeatureServer/0',
+
+        # html | json | pjson
+        [Parameter()]
+        [ValidateSet('json', 'pjson', 'html')]
+        [string]
+        $OutputFormat = 'json'
+    )
+
+    $args | ConvertTo-Json | Write-Debug
+
+    $requestParams = @{
+        Uri  = $Uri
+        Body = @{f = $OutputFormat }
+    }
+    
+    if (($null -eq $OutputFormat) -or (('json', 'pjson') -notcontains $OutputFormat))
+    {
+        Invoke-WebRequest @requestParams | Select-Object -ExpandProperty Content
+    }
+    else
+    {
+        Invoke-RestMethod @requestParams
+    }
+
+}
+
 <#
 .SYNOPSIS
     Gets the WSDOT items from the Geospatial Open Data Notifications site.
@@ -206,10 +287,7 @@ function ConvertTo-NotificationAttributes
 .NOTES
     See https://wa-geoservices.maps.arcgis.com/apps/dashboards/cdf666ff7fa5499a88f3ebf4488cae5d
 .EXAMPLE
-    PS C:> Get-WsdotItems -ReturnAttributes
-        | Sort-Object date_of_change -Descending
-        | Sort-Object type_of_notification
-        | Format-List -GroupBy type_of_notification
+    PS C:> Get-WsdotItems | Sort-Object date_of_change -Descending | Sort-Object type_of_notification | Format-List -GroupBy type_of_notification
     
        type_of_notification: _both
     
@@ -363,46 +441,69 @@ function Get-WsdotItems
         [uri]
         $FeatureServerLayerUrl = 'https://services.arcgis.com/jsIt88o09Q0r1j8h/ArcGIS/rest/services/survey123_75f94f8a0675460796843c95665a814b/FeatureServer/0/query',
 
-        # Query parameters. You can usually omit this and use the default value.
-        [Parameter(
-            Position = 1,
-            HelpMessage = 'Query parameters. You can usually omit this and use the default value.'
-        )]
-        [ValidateNotNullOrEmpty()]
-        [ValidateScript({
-                $_ -and ($_.f -iin 'html', 'json', 'geojson', 'pjson', 'pgeojson', 'pbf')
-            })]
-        [hashtable]
-        $QueryParams = @{
-            where          = "questions_contact LIKE '%@wsdot.wa.gov'"
-            outFields      = '*'
-            returnGeometry = $false
-            sqlFormat      = 'none'
-            f              = 'json'
-        },
-
+        # By default, only the attributes of the query result's features will be returned.
+        # This is done because the feature service layer's geometry is always a point of 0,0
+        # and not meant to be used for anything.
+        # Use this switch to override this behavior and return the whole feature set.
         [Parameter()]
         [switch]
-        $ReturnAttributes
+        $ReturnFeatureSet,
+
+        # Unless the schema of the service changes, you can just use the default value.
+        [Parameter()]
+        $Where = "questions_contact LIKE '%@wsdot.wa.gov'",
+        
+        [Parameter()]
+        [ValidateSet('json', 'geojson', 'pbf', 'html')]
+        [string]
+        $Format = 'json',
+
+        # Specify which fields you want to return.
+        # If null or empty, all fields will be returned.
+        [Parameter()]
+        [AllowNull()]
+        [AllowEmptyCollection()]
+        [string[]]
+        $outFields
+
     )
 
-    $FeatureServerLayerUrl | Out-String | Write-Debug
+    $QueryParams = @{
+        where                = $Where
+        # If no outfields were provided (either null or empty array), return all fields ('*').
+        outFields            = $null -eq $outFields -or $outFields.Length -lt 1 ? '*' : $outFields -join ','
+        returnGeometry       = $false
+        useStandardizedQuery = $true
+        f                    = $Format ?? 'json'
+    }
 
-    $QueryParams | Out-String | Write-Debug
+    # Define a list of formats that should use
+    New-Variable -Name jsonFormats -Value ('json', 'geojson') -Option Constant -Description 'These formats should use Invoke-RestMethod rather than Invoke-WebMethod'
+
+    if ($jsonFormats -inotcontains $Format)
+    {
+
+        return Invoke-WebRequest -QueryParams $QueryParams
+    }
 
     $featureSet = Invoke-RestMethod $FeatureServerLayerUrl -Body $QueryParams -Method Get
 
-    if ($ReturnAttributes)
+    if ($null -ne $featureSet.error)
     {
-        $features = $featureSet | Select-Object -ExpandProperty features
+        $featureSet | Select-Object -ExpandProperty error | Out-String | Write-Error
+    }
 
-        foreach ($feature in $features)
-        {
-            $feature.attributes | ConvertTo-NotificationAttributes
-        }
-    }
-    else
+    if ($ReturnFeatureSet)
     {
-        $featureSet
+        return $featureSet
     }
+
+
+    $features = $featureSet | Select-Object -ExpandProperty features
+
+    foreach ($feature in $features)
+    {
+        $feature.attributes | ConvertTo-NotificationAttributes
+    }
+
 }
