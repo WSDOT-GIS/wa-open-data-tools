@@ -1,0 +1,23 @@
+{
+  "name": "wa-open-data",
+  "version": "0.0.1",
+  "description": "Queries Washington Open Data Portal Notifications",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "prepare": "npm run-script build",
+    "build": "tsc",
+    "test": "ts-node index.test.ts"
+  },
+  "author": "Jeff Jacobson",
+  "license": "Unlicense",
+  "devDependencies": {
+    "@types/arcgis-rest-api": "^10.4.5",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "eslint": "^8.32.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  }
+}
